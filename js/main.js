@@ -15,11 +15,9 @@ function addBoxes(passed) {
     }
 }
 
-function dateDiff(dateA, dateB) {
+function dateDiff(firstDate, secondDate) {
 
     var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-    var firstDate = new Date(1978,17,04);
-    var secondDate = new Date();
 
     var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
     var diffWeeks = Math.round(diffDays / 7);
@@ -27,8 +25,14 @@ function dateDiff(dateA, dateB) {
     return {"days": diffDays, "weeks": diffWeeks};
 }
 
-var days = dateDiff(1978,17,04).days;
-var weeks = dateDiff(1978,17,04).weeks;
+var firstDate = new Date(1978,03,17);
+var secondDate = new Date();
+
+console.log(firstDate);
+console.log(secondDate);
+
+var days = dateDiff(firstDate, secondDate).days;
+var weeks = dateDiff(firstDate, secondDate).weeks;
 console.log(days);
 console.log(weeks);
 
